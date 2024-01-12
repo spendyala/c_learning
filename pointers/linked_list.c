@@ -8,7 +8,7 @@
 struct node {
     int data;
     struct node *next;
-} node;
+} node_global;
 
 void print_linked_list(struct node *head);
 void add_tail(struct node *head, int data);

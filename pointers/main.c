@@ -37,15 +37,6 @@ int main() {
     free(array_2d);
     printf("\nEnd of two d array\n");
 
-
-
-
-
-
-
-
-
-
     /*
     int *ip;
 
