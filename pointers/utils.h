@@ -8,7 +8,7 @@
 int* one_d_array(int n){
     // Type /** + Enter
     // https://arthursonzogni.com/Diagon/#Flowchart To generate the flow chart
-    /*
+    /**
           ┌────────────────────────┐
           │The purpose is to create│
           │a one-dimensional array │
