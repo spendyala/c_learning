@@ -186,7 +186,6 @@ int main() {
 
     printf("\nMin value in the BST: %d", min_value_in_bst(root)->data);
 
-
     root = delete_node(root, 20);
     printf("\nIn-order traversal after deleting 20: ");
     in_order(root);
@@ -198,7 +197,6 @@ int main() {
     root = delete_node(root, 50);
     printf("\nIn-order traversal after deleting 30: ");
     in_order(root);
-
 
     return 0;
 }
