@@ -15,9 +15,12 @@ int* cube_host(int *a, int len, int *c){
     return c;
 }
 
-__global__ void cube_device(int *a, int *c) {
+__global__ void cube_device(int *a, int *c, int n) {
     int i = threadIdx.x + blockDim.x * blockIdx.x;
-    c[i] = a[i] * a[i] * a[i];
+    if (i < n){
+        c[i] = a[i] * a[i] * a[i];
+    }
+
 }
 
 int random(int min, int max){
@@ -30,7 +33,7 @@ int main() {
     int *h_a, *h_c, *h_d;
     int N = 1000000000;
     int *d_a, *d_c;
-    int BLOCK_SIZE=1024, GRID_SIZE=65535;
+    int BLOCK_SIZE=1024, GRID_SIZE=ceil(N/BLOCK_SIZE);
 
     // Allocating memory on the host
     h_a = (int *)malloc(N*sizeof(int));
@@ -52,7 +55,7 @@ int main() {
     cudaMemcpy(d_a, h_a, N*sizeof(int), cudaMemcpyHostToDevice);
     // Launch the kernel
     start_t_k = clock();
-    cube_device<<<GRID_SIZE, BLOCK_SIZE>>>(d_a, d_c);
+    cube_device<<<GRID_SIZE, BLOCK_SIZE>>>(d_a, d_c, N);
     end_t_k = clock();
     total_t = (double)(end_t_k - start_t_k)/ CLOCKS_PER_SEC;
     printf("\n Device Kernel Time %f\n", total_t);
