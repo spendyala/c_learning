@@ -1,4 +1,6 @@
 //%%writefile array_sum.cu
+// !nvcc array_sum.cu -o array_sum
+// !./array_sum
 #include <cuda.h>
 #include <stdio.h>
 #include <stdlib.h>
