@@ -20,20 +20,21 @@ int sum_array(int *h_a, int len)
 }
 
 
-__global__ void gpu_sum_array_1(int *d_a, int len, int *sum, int *init){
+__global__ void gpu_sum_array_1(int *d_a, int len, int *sum){
     __shared__ int temp;
-    init[blockIdx.x] = temp;
+
+    if (threadIdx.x == 0){
+        temp = 0;
+    }
+    __syncthreads();
 
     int i = threadIdx.x + blockDim.x * blockIdx.x; // Global index, threadIdx.x is local
 
-    /*while(i < blockDim.x+threadIdx.x){ // Iterate over all the threads of a given block and update temp.
-      temp += d_a[i]; // d_a is global memory, sum all the
-      i++;
-    }*/
-    temp += d_a[i];
-
+    atomicAdd(&temp, d_a[i]);
     __syncthreads();
+
     sum[blockIdx.x] = temp;
+
 }
 /*
 Every thread should update the sum seen so far for it's block
@@ -49,12 +50,11 @@ Given thread ID we should load the entire d_a to shared memory
 
 
 int main() {
-    int *h_a, *h_sum, *h_init;
+    int *h_a, *h_sum;
     int BLOCK_SIZE=1024, GRID_SIZE=65535;
 
     h_a = (int *)malloc(N*sizeof(int));
     h_sum = (int *)malloc(GRID_SIZE*sizeof(int));
-    h_init = (int *)malloc(GRID_SIZE*sizeof(int));
 
     for(int i=0; i<N; i++){
         h_a[i] = 1;
@@ -64,22 +64,16 @@ int main() {
 
 
     // GPU
-    int *d_a, *d_sum, *d_init;
+    int *d_a, *d_sum;
     cudaMalloc((void **)&d_a, N*sizeof(int));
     cudaMalloc((void **)&d_sum, GRID_SIZE*sizeof(int));
-    cudaMalloc((void **)&d_init, GRID_SIZE*sizeof(int));
     cudaMemcpy(d_a, h_a, N*sizeof(int), cudaMemcpyHostToDevice);
 
     // Kernal Code
-    gpu_sum_array_1<<<GRID_SIZE, BLOCK_SIZE>>>(d_a, N, d_sum, d_init);
+    gpu_sum_array_1<<<GRID_SIZE, BLOCK_SIZE>>>(d_a, N, d_sum);
 
     cudaMemcpy(h_sum, d_sum, GRID_SIZE*sizeof(int), cudaMemcpyDeviceToHost);
-    cudaMemcpy(h_init, d_init, GRID_SIZE*sizeof(int), cudaMemcpyDeviceToHost);
 
-    for(int i=0; i<10; i++){
-        printf("Init: %d\n", h_init[i]);
-    }
-    printf("\n");
 
     int temp = 0;
     for(int i=0; i<GRID_SIZE; i++){
@@ -88,27 +82,8 @@ int main() {
     printf("GPU Sum: %d\n", temp);
 
 
-    cudaFree(d_a); cudaFree(d_sum); cudaFree(d_init);
-    free(h_a); free(h_sum); free(h_init);
+    cudaFree(d_a); cudaFree(d_sum);
+    free(h_a); free(h_sum);
 
     return 0;
 }
-
-/*
-
-12 34 50 100 - Host
-Copy to device
-
-
-assign each number to one thread
-
-[block1] [block2]
-all the thread in the block, sum: Called as Block SUM
-
-All blocks to finish
-
-and sum all the blocks
-
-DRAM
-
-*/
