@@ -1,4 +1,4 @@
-%%writefile stencil_1d.cu
+//%%writefile stencil_1d.cu
 #include <cuda.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,7 +39,7 @@ __global__ void stencil_1d(int *d_in, int *d_out, int *d_shared){
     }
     // Store the result
     d_out[gindex] = result;
-    
+
     __syncthreads();
 
     if(threadIdx.x==0){
@@ -85,6 +85,11 @@ int main() {
 
     printf("\n");
     for(int i=0; i<15; i++){
+        printf("%d -> ", h_shared[i]);
+    }
+    printf("\n");
+    printf("Block2\n");
+    for(int i=(BLOCK_SIZE+2*RADIUS); i<(BLOCK_SIZE+2*RADIUS)+15; i++){
         printf("%d -> ", h_shared[i]);
     }
     printf("\n");
