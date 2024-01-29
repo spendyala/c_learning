@@ -37,6 +37,23 @@ __global__ void gpu_sum_array_1(int *d_a, int len, int *sum){
 
 }
 /*
+ *
+ *
+ 1 2 3 4 5 6 0 0
+  3   7   11  0  Block 1
+    10      11   Block 1
+        21       Block 1
+
+
+# This is called Divergence.
+if condition is True:
+    do A()  fast
+else:
+    do B()  slow
+
+C()
+
+
 Every thread should update the sum seen so far for it's block
 
 Cache needed should be partial sums of the shared memory.
