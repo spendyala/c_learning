@@ -24,6 +24,7 @@ __global__ void stencil_1d(int *d_in, int *d_out, int *d_shared){
     // Synchronize (ensure all the data is available)
     __syncthreads(); // Ensures we copied all the data to the device shared memory temp
 
+    //if (gindex == 0)
     if((threadIdx.x == 0) && (blockIdx.x == 0)){ // trying to fetch only the first block of the shared memory for analysis.
         for(int idx=0; idx<(BLOCK_SIZE + 2 * RADIUS); idx++){
             d_shared[idx] = temp[idx];
@@ -62,6 +63,7 @@ int main() {
         h_in[i] = i;
     }
 
+    printf("\nInput:\n");
     for(int i=0; i<15; i++){
         printf("%d -> ", h_in[i]);
     }
@@ -82,18 +84,18 @@ int main() {
     cudaMemcpy(h_out, d_out, GRID_SIZE*sizeof(int), cudaMemcpyDeviceToHost);
     cudaMemcpy(h_shared, d_shared, (BLOCK_SIZE+2*RADIUS)*sizeof(int), cudaMemcpyDeviceToHost);
 
-    printf("\n");
+    printf("\nshared Memory:\n");
     for(int i=0; i<15; i++){
         printf("%d -> ", h_shared[i]);
     }
     printf("\n");
     for(int i=(BLOCK_SIZE+2*RADIUS)-1; i>(BLOCK_SIZE+2*RADIUS)-15; i--){
-        printf("%d -> ", h_shared[i]);
+        printf("%d <- ", h_shared[i]);
     }
     printf("\n");
     printf("\n");
 
-    printf("\n");
+    printf("\nRolling Sum:\n");
 
     for(int i=0; i<15; i++){
         printf("%d -> ", h_out[i]);
