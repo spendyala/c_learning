@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define BLOCK_SIZE 1024
+#define BLOCK_SIZE 256
 #define GRID_SIZE 1024
-#define N 1024 * 1024
+#define N BLOCK_SIZE*GRID_SIZE
 
 int sum(int *arr, int num){
     int ans = 0;
@@ -20,7 +20,7 @@ int sum(int *arr, int num){
 
 __global__ void reduce_sum_1(int *d_a, int *ans){
 
-    __shared__ int partial_sum[1024];
+    __shared__ int partial_sum[GRID_SIZE];
 
     int global_id = blockIdx.x * blockDim.x + threadIdx.x;
     int local_id = threadIdx.x;
