@@ -24,7 +24,9 @@ int sum_array(int *h_a, int len)
 
 __global__ void gpu_sum_array(int *d_in, int *res_sum){
     __shared__ int partial_sum;
-
+    // Bus going to individual home and dropping them at school
+    // vs
+    // Bus filling with all the kids from each home, once occupied dropping them at school.
     int global_id = threadIdx.x + blockDim.x * blockIdx.x; // Global index, threadIdx.x is local
 
     if (threadIdx.x == 0){
