@@ -3,6 +3,11 @@ https://harmanani.github.io/classes/csc447/Notes/Lecture15.pdf
 https://www.bishopbook.com/
 https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf 
 
+https://drive.google.com/drive/folders/1hJY5BCl7ioii7K8VYIMM2jyI234MVMR1?usp=drive_link 
+
+https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31880/
+https://github.com/NVIDIA/Megatron-LM
+https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31880/ 
 
 Function pointers in C
 How to have function pointers as arguments in CUDA C
@@ -10,3 +15,12 @@ can we have a CPU Map?
 
 pthreads
 C++
+
+
+max(x^2)
+- Find Max as max_x
+- Find Min as min_x
+- get max(min_x^2, max_x^2)
+
+
+SynSense 
