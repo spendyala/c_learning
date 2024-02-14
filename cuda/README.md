@@ -9,6 +9,8 @@ https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31880/
 https://github.com/NVIDIA/Megatron-LM
 https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31880/ 
 
+https://crd.lbl.gov/assets/Uploads/PMBS20-NVSHMEM-final.pdf 
+
 Function pointers in C
 How to have function pointers as arguments in CUDA C
 can we have a CPU Map?
@@ -24,3 +26,8 @@ max(x^2)
 
 
 SynSense 
+
+
+CUDA Tutorial
+https://www.olcf.ornl.gov/cuda-training-series/
+https://github.com/olcf/cuda-training-series/ 
