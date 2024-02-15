@@ -30,4 +30,6 @@ SynSense
 
 CUDA Tutorial
 https://www.olcf.ornl.gov/cuda-training-series/
-https://github.com/olcf/cuda-training-series/ 
+https://github.com/olcf/cuda-training-series/
+https://docs.olcf.ornl.gov/training/training_archive.html
+https://www.olcf.ornl.gov/for-users/training/training-calendar/ 
