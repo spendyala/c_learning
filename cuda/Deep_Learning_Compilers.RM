@@ -1,0 +1,24 @@
+Deep learning compilers are specialized tools designed to optimize and translate deep learning models into executable code that can run efficiently on various hardware platforms. These compilers play a crucial role in improving the performance and portability of deep learning models. Here are some notable examples:
+
+1. TensorFlow XLA (Accelerated Linear Algebra):
+XLA is a domain-specific compiler for linear algebra that optimizes TensorFlow computations. It can improve the performance of TensorFlow models by optimizing the computation graph and generating tailored code for the underlying hardware, such as CPUs, GPUs, and TPUs.
+
+2. Apache TVM:
+TVM is an open-source machine learning compiler framework for CPUs, GPUs, and machine learning accelerators. It provides end-to-end compilation from high-level frameworks like TensorFlow, PyTorch, and Keras to different hardware backends. TVM includes features such as automatic optimization of neural network computations and support for a wide range of devices.
+
+3. PyTorch Glow:
+Glow is a machine learning compiler and execution engine for hardware accelerators. It is designed to be used with PyTorch and other frameworks to optimize the performance of deep learning models on different hardware platforms. Glow lowers traditional neural network representations down to a lower-level intermediate representation, enabling hardware-specific optimizations.
+
+4. NVIDIA TensorRT:
+TensorRT is a high-performance deep learning inference optimizer and runtime that delivers low latency and high throughput for deep learning inference applications. It supports TensorFlow, PyTorch, and other frameworks, and is designed to work efficiently on NVIDIA GPUs. TensorRT optimizes the network by merging layers, optimizing memory usage, and utilizing lower-precision arithmetic where appropriate.
+
+5. ONNX Runtime:
+ONNX Runtime is a performance-focused engine for Open Neural Network Exchange (ONNX) models. It provides an open-source inference engine that is compatible with a wide array of architectures and supports models from many frameworks, including PyTorch, TensorFlow, and scikit-learn. ONNX Runtime optimizes the execution of the models on different hardware platforms.
+
+6. MLIR (Multi-Level Intermediate Representation):
+MLIR is part of the LLVM project and aims to provide a flexible intermediate representation that can bridge the gap between high-level machine learning models and low-level hardware optimizations. It supports multiple levels of abstraction and can be used to optimize models for various hardware targets.
+
+7. Halide:
+Halide is a programming language designed to make it easier to write high-performance image and array processing code on modern machines. While not exclusively a deep learning compiler, Halide is used in the context of deep learning for optimizing data-intensive operations and can be integrated with deep learning frameworks to optimize specific layers or operations.
+
+These compilers help bridge the gap between high-level deep learning models and the diverse landscape of hardware platforms, ensuring that models can run efficiently regardless of the underlying hardware.

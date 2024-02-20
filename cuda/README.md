@@ -19,10 +19,6 @@ pthreads
 C++
 
 
-max(x^2)
-- Find Max as max_x
-- Find Min as min_x
-- get max(min_x^2, max_x^2)
 
 
 SynSense 
@@ -33,3 +29,22 @@ https://www.olcf.ornl.gov/cuda-training-series/
 https://github.com/olcf/cuda-training-series/
 https://docs.olcf.ornl.gov/training/training_archive.html
 https://www.olcf.ornl.gov/for-users/training/training-calendar/ 
+
+
+TODO:
+
+* max(x^2)
+  - Find Max as max_x
+  - Find Min as min_x
+  - get max(min_x^2, max_x^2)
+* Inner product of two Vectors
+* Matrix Multiplicaiton of two matrices
+
+
+
+
+
+
+XLA Programming 
+
+Deep Learning Compilers in NVIDIA.
