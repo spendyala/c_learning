@@ -39,6 +39,10 @@ TODO:
   - get max(min_x^2, max_x^2)
 * Inner product of two Vectors
 * Matrix Multiplicaiton of two matrices
+* C++
+* Operating System
+* CUDA 1-4 Revision and complete the rest
+* Leetcode
 
 
 
