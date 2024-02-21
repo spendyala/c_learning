@@ -52,3 +52,4 @@ TODO:
 XLA Programming 
 
 Deep Learning Compilers in NVIDIA.
+https://drive.google.com/file/d/1djqKqVa3Ld6cYOq4p8ZnSyJakn7ggYFB/view?usp=drive_link 
