@@ -53,3 +53,7 @@ XLA Programming
 
 Deep Learning Compilers in NVIDIA.
 https://drive.google.com/file/d/1djqKqVa3Ld6cYOq4p8ZnSyJakn7ggYFB/view?usp=drive_link 
+
+NCCL: 
+
+https://docs.nvidia.com/deeplearning/sdk/nccl-archived/nccl_256/pdf/NCCL-Release-Notes.pdf 
