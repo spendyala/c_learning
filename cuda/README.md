@@ -57,3 +57,6 @@ https://drive.google.com/file/d/1djqKqVa3Ld6cYOq4p8ZnSyJakn7ggYFB/view?usp=drive
 NCCL: 
 
 https://docs.nvidia.com/deeplearning/sdk/nccl-archived/nccl_256/pdf/NCCL-Release-Notes.pdf 
+
+
+https://www.nvidia.com/en-us/on-demand/playlist/playList-d59c3dc3-9e5a-404d-8725-4b567f4dfe77/ 
