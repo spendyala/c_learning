@@ -14,3 +14,5 @@ Binary Lifting Concept
 https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/LongestIncreasingSubsequence.pdf
 
 Search for the middle element in a 2dim array
+
+https://courses.cs.washington.edu/courses/cse521/13wi/slides/06dp-sched.pdf 
