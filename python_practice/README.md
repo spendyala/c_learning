@@ -11,3 +11,6 @@ https://platform.stratascratch.com/coding?code_type=1
 
 
 Binary Lifting Concept
+https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/LongestIncreasingSubsequence.pdf
+
+Search for the middle element in a 2dim array
