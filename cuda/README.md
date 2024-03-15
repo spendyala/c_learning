@@ -63,3 +63,6 @@ https://www.nvidia.com/en-us/on-demand/playlist/playList-d59c3dc3-9e5a-404d-8725
 
 https://arxiv.org/abs/2401.09350 
 
+https://developer.apple.com/metal/pytorch/ M2 PyTorch
+
+https://cuda-tutorial.github.io/ 
