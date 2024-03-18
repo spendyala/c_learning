@@ -18,3 +18,14 @@ Search for the middle element in a 2dim array
 https://www.geeksforgeeks.org/implementing-regular-expression-matching/
 
 https://courses.cs.washington.edu/courses/cse521/13wi/slides/06dp-sched.pdf 
+
+
+
+# Graphs
+- https://memgraph.com/blog/graph-algorithms-applications 
+- https://en.wikipedia.org/wiki/Depth-first_search 
+  - Tree Edge
+  - Back Edge
+  - Forward Edge
+  - Cross Edge
+  
