@@ -29,3 +29,10 @@ https://courses.cs.washington.edu/courses/cse521/13wi/slides/06dp-sched.pdf
   - Forward Edge
   - Cross Edge
   
+# Implementation
+Segment Trees
+Rope Data Structure
+Suffix Trees
+Trie
+
+# 
