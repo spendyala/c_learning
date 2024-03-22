@@ -35,4 +35,15 @@ Rope Data Structure
 Suffix Trees
 Trie
 
-# 
+# Random Problems
+https://leetcode.com/problems/largest-rectangle-in-histogram/description/
+https://leetcode.com/problems/meeting-rooms/description/
+https://leetcode.com/problems/meeting-rooms-ii/description/
+https://leetcode.com/problems/meeting-rooms-iii/description/
+https://leetcode.com/problems/meeting-scheduler/description/
+https://leetcode.com/problems/wildcard-matching/
+
+
+https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
+https://leetcode.com/problems/container-with-most-water/description/
+https://leetcode.com/problems/implement-trie-prefix-tree/description/

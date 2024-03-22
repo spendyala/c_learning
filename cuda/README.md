@@ -66,3 +66,6 @@ https://arxiv.org/abs/2401.09350
 https://developer.apple.com/metal/pytorch/ M2 PyTorch
 
 https://cuda-tutorial.github.io/ 
+
+https://developer.nvidia.com/embedded/learn/getting-started-jetson
+
