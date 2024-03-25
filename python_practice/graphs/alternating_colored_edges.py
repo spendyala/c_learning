@@ -36,6 +36,7 @@ class Solution:
                         queue.append((neighbor, steps + 1, color))
                         # Update the distance for the neighbor if it's the first time reaching it,
                         # or if we found a shorter path
+                        # NOTE: distances[neighbor] > steps + 1 is not required as we are traversing level by level.
                         if distances[neighbor] == -1 or distances[neighbor] > steps + 1:
                             distances[neighbor] = steps + 1
 
