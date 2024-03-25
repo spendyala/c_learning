@@ -52,3 +52,42 @@ class Solution:
 
         return -1
 
+    def shortestPath_veera(self, grid: List[List[int]], k: int) -> int:
+        m = len(grid)
+        n = len(grid[0])
+
+        if k >= m + n - 2: # Remove source and destination
+            return m + n - 2
+
+        def get_neighbors(x, y):
+            directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+            for each_x, each_y in directions:
+                if 0<= x + each_x <= m-1 and 0 <= y + each_y <= n-1:
+                    yield x + each_x, y + each_y
+
+        seen = set()
+        queue = deque()
+
+        destination = (m-1, n-1)
+
+        queue.append((0, 0, k, 0))
+
+        while queue:
+            i, j, eliminations_counter, distance = queue.popleft()
+
+            if (i, j) == destination:
+                return distance
+
+            if (i, j, eliminations_counter) in seen:
+                continue
+
+            seen.add((i, j, eliminations_counter))
+
+            for row, col in get_neighbors(i, j):
+                if grid[row][col] == 0:
+                    queue.append((row, col, eliminations_counter, distance+1))
+                elif grid[row][col] == 1 and eliminations_counter > 0:
+                    queue.append((row, col, eliminations_counter-1, distance+1))
+
+        return -1
+
