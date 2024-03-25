@@ -89,8 +89,8 @@ class Solution:
             for neighbor in next_graph:
                 if (neighbor, next_color) not in seen:
                     seen.add((neighbor, next_color))
-                    if result[neighbor] == -1: # or result[neighbor] > distance + 1
-                        # Or case will never happen as we are traversing level by level.
+                    if result[neighbor] == -1: # or result[neighbor] > distance + 1:
+                        # result[neighbor] > distance + 1 case will never happen as we are traversing level by level.
                         result[neighbor] = distance + 1
                     queue.append((neighbor, distance + 1, next_color))
 
